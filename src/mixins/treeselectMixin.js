@@ -1254,7 +1254,7 @@ export default {
         }
       })
 
-      const lowerCasedSearchQuery = searchQuery.trim().toLocaleLowerCase()
+      const lowerCasedSearchQuery = searchQuery.trim().toLocaleLowerCase('tr-TR')
       const splitSearchQuery = lowerCasedSearchQuery.replace(/\s+/g, ' ').split(' ')
       this.traverseAllNodesDFS(node => {
         if (this.searchNested && splitSearchQuery.length > 1) {
@@ -1558,7 +1558,7 @@ export default {
           const isNew = !!node.isNew
           const lowerCased = this.matchKeys.reduce((prev, key) => ({
             ...prev,
-            [key]: stringifyOptionPropValue(node[key]).toLocaleLowerCase(),
+            [key]: stringifyOptionPropValue(node[key]).toLocaleLowerCase('tr-TR'),
           }), {})
           const nestedSearchLabel = isRootNode
             ? lowerCased.label
